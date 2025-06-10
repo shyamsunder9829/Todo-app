@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">📝 <span>ToDoApp</span></div>
+    <div class="theme-toggle">
+      <label for="themeSelect">Theme:</label>
+      <select id="themeSelect" onchange="changeTheme()">
+        <option value="light">☀️ Light</option>
+        <option value="dark">🌙 Dark</option>
+      </select>
+    </div>
+  </nav>
+
+  <!-- Main App Container -->
+  <div class="app">
+    <header>
+      <h1 class="main-title">✅ My To-Do List</h1>
+      <p class="subtitle">Organize your day efficiently</p>
+    </header>
+
+    <div class="input-container">
+      <input type="text" id="taskInput" placeholder="Enter a new task..." />
+      <button onclick="addTask()" class="add-btn">➕ Add</button>
+    </div>
+
+    <div class="action-bar">
+      <div class="filters">
+        <button onclick="filterTasks('all')" class="filter-btn active">All</button>
+        <button onclick="filterTasks('active')" class="filter-btn">Pending</button>
+        <button onclick="filterTasks('completed')" class="filter-btn">Completed</button>
+      </div>
+      <button class="clear-btn" onclick="clearAll()">🗑️ Clear All</button>
+    </div>
+
+    <ul id="taskList" class="task-list"></ul>
+
+    <footer>
+      <p id="taskCounter">Tasks: 0 | Completed: 0</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
