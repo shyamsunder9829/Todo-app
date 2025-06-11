@@ -22,16 +22,21 @@ a, button, input, select {
 /* Navbar */
 .navbar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   background-color: #0077cc;
   color: white;
-  padding: 1rem 2rem;
+  padding: 1rem;
 }
 
 .logo span {
   font-weight: bold;
   font-size: 1.5rem;
+}
+
+.theme-toggle {
+  margin-top: 0.5rem;
 }
 
 .theme-toggle select {
@@ -76,12 +81,12 @@ body.dark-theme .main-title {
 /* Input Section */
 .input-container {
   display: flex;
-  margin-top: 1rem;
   gap: 10px;
+  margin-top: 1rem;
 }
 
 #taskInput {
-  flex-grow: 1;
+  flex: 1;
   padding: 0.75rem;
   border: 2px solid #0077cc;
   border-radius: 5px;
@@ -107,11 +112,13 @@ body.dark-theme .main-title {
   align-items: center;
   margin: 1rem 0;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
 .filters {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .filter-btn {
@@ -172,3 +179,41 @@ footer {
   font-size: 0.9rem;
   color: #555;
 }
+
+/* ----------------------- */
+/* 🎯 Mobile Responsiveness */
+/* ----------------------- */
+@media (max-width: 600px) {
+  .app {
+    margin: 1rem;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .input-container {
+    flex-direction: column;
+  }
+
+  #taskInput, .add-btn {
+    width: 100%;
+  }
+
+  .add-btn {
+    padding: 0.75rem;
+  }
+
+  .action-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filters {
+    justify-content: center;
+  }
+
+  .filter-btn,
+  .clear-btn {
+    width: 100%;
+  }
+}
+
